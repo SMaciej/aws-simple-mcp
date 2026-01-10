@@ -1,0 +1,50 @@
+[project]
+name = "aws-lambda-mcp"
+version = "0.1.0"
+description = "Very basic mvp project to showcase MCP server deployed on AWS Lambda."
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.poetry.dependencies]
+python = "^3.13.0"
+pydantic = {version = "^2.0.3"}
+aws-lambda-powertools =  {extras = ["tracer"],version = "^3.7.0"}
+boto3 = "^1.26.125"
+aws-lambda-env-modeler = "*"
+fastmcp = "*"
+fastapi = "*"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.14.9",
+    "pre-commit>=4.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = []
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["callcoward"]
+omit = ["*/tests/*", "*/__pycache__/*", "callcoward/twilio/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+]

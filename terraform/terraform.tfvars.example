@@ -1,0 +1,22 @@
+# Terraform Environment Variables
+environment = "dev"
+aws_region  = "us-east-1"
+
+# Lambda Configuration
+lambda_timeout     = 30
+lambda_memory_size = 512
+log_level          = "INFO"
+log_retention_days = 7
+
+# Security
+enable_function_url_auth = false
+cors_allow_origins       = ["*"]
+
+# API Gateway
+create_api_gateway = true
+
+# Additional Tags
+tags = {
+  Team = "Platform"
+  Cost = "Development"
+}
