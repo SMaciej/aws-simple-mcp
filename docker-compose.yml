@@ -14,6 +14,7 @@ services:
   test:
     build: .
     container_name: mcp-server-test
+    profiles: ["tools"]
     volumes:
       - .:/app
     command: python -m pytest tests/ -v
@@ -21,6 +22,7 @@ services:
   lint-check:
     build: .
     container_name: mcp-server-lint
+    profiles: ["tools"]
     volumes:
       - .:/app
     command: ruff check .
