@@ -16,22 +16,46 @@ variable "project_name" {
   default     = "mcp-example"
 }
 
-variable "lambda_package_path" {
-  description = "Path to the Lambda deployment package"
+variable "vpc_cidr" {
+  description = "CIDR block for VPC"
   type        = string
-  default     = "../dist/lambda.zip"
+  default     = "10.0.0.0/16"
 }
 
-variable "lambda_timeout" {
-  description = "Lambda function timeout in seconds"
+variable "container_port" {
+  description = "Port exposed by the container"
   type        = number
-  default     = 30
+  default     = 8000
 }
 
-variable "lambda_memory_size" {
-  description = "Lambda function memory size in MB"
+variable "fargate_cpu" {
+  description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU units)"
+  type        = string
+  default     = "256"
+}
+
+variable "fargate_memory" {
+  description = "Fargate instance memory to provision (in MiB)"
+  type        = string
+  default     = "512"
+}
+
+variable "desired_count" {
+  description = "Number of ECS tasks to run"
   type        = number
-  default     = 512
+  default     = 2
+}
+
+variable "min_capacity" {
+  description = "Minimum number of ECS tasks"
+  type        = number
+  default     = 1
+}
+
+variable "max_capacity" {
+  description = "Maximum number of ECS tasks"
+  type        = number
+  default     = 4
 }
 
 variable "log_level" {
@@ -46,22 +70,40 @@ variable "log_retention_days" {
   default     = 7
 }
 
-variable "enable_function_url_auth" {
-  description = "Enable IAM authentication for Lambda function URL"
+variable "alb_deletion_protection" {
+  description = "Enable deletion protection for ALB"
   type        = bool
   default     = false
 }
 
-variable "cors_allow_origins" {
-  description = "List of allowed CORS origins"
-  type        = list(string)
-  default     = ["*"]
+variable "enable_https" {
+  description = "Enable HTTPS listener on ALB"
+  type        = bool
+  default     = false
 }
 
-variable "create_api_gateway" {
-  description = "Create API Gateway for the Lambda function"
+variable "certificate_arn" {
+  description = "ARN of ACM certificate for HTTPS"
+  type        = string
+  default     = ""
+}
+
+variable "enable_route53" {
+  description = "Enable Route53 DNS record creation"
   type        = bool
-  default     = true
+  default     = false
+}
+
+variable "route53_zone_id" {
+  description = "Route53 hosted zone ID"
+  type        = string
+  default     = ""
+}
+
+variable "domain_name" {
+  description = "Domain name for the service"
+  type        = string
+  default     = ""
 }
 
 variable "tags" {

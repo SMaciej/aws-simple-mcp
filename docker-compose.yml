@@ -5,8 +5,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POWERTOOLS_SERVICE_NAME=mcp-lambda-server
-      - POWERTOOLS_LOG_LEVEL=INFO
+      - ENVIRONMENT=dev
+      - LOG_LEVEL=INFO
     volumes:
       - ./service:/app/service
     restart: unless-stopped
@@ -16,8 +16,6 @@ services:
     container_name: mcp-server-test
     volumes:
       - .:/app
-    environment:
-      - GOOGLE_API_KEY=test-key
     command: python -m pytest tests/ -v
 
   lint-check:

@@ -1,6 +1,5 @@
-# Simple MCP server deployed on AWS Lambda
-Very basic mvp project to showcase MCP server deployed on AWS Lambda.
-Based on [Ran Isenberg's MCP Blueprint](https://github.com/ran-isenberg/aws-lambda-mcp-cookbook)
+# Simple MCP server deployed on AWS Fargate
+Very basic mvp project to showcase MCP server deployed on AWS Fargate.
 
 # Local environment
 The simplest way to run the MCP server locally is to use docker:

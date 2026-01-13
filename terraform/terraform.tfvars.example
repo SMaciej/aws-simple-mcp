@@ -1,19 +1,36 @@
-# Terraform Environment Variables
-environment = "dev"
+# AWS Configuration
 aws_region  = "us-east-1"
+environment = "dev"
+project_name = "mcp-server"
 
-# Lambda Configuration
-lambda_timeout     = 30
-lambda_memory_size = 512
+# Network Configuration
+vpc_cidr = "10.0.0.0/16"
+
+# Container Configuration
+container_port = 8000
+fargate_cpu    = "256"
+fargate_memory = "512"
+
+# ECS Service Configuration
+desired_count = 2
+min_capacity  = 1
+max_capacity  = 4
+
+# Logging
 log_level          = "INFO"
 log_retention_days = 7
 
-# Security
-enable_function_url_auth = false
-cors_allow_origins       = ["*"]
+# Load Balancer
+alb_deletion_protection = false
 
-# API Gateway
-create_api_gateway = true
+# HTTPS Configuration (optional)
+enable_https    = false
+certificate_arn = ""
+
+# Route53 Configuration (optional)
+enable_route53  = false
+route53_zone_id = ""
+domain_name     = ""
 
 # Additional Tags
 tags = {
