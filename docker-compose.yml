@@ -1,0 +1,28 @@
+services:
+  mcp-server:
+    build: .
+    container_name: mcp-server-main
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=dev
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./service:/app/service
+    restart: unless-stopped
+
+  test:
+    build: .
+    container_name: mcp-server-test
+    profiles: ["tools"]
+    volumes:
+      - .:/app
+    command: python -m pytest tests/ -v
+
+  lint-check:
+    build: .
+    container_name: mcp-server-lint
+    profiles: ["tools"]
+    volumes:
+      - .:/app
+    command: ruff check .
