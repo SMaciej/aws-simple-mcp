@@ -20,7 +20,7 @@
 
 ## Project-Specific Notes
 
-- This is a Python project using Google GenAI SDK for Live API integration
-- Always verify API methods and types against official Google GenAI documentation
+- This is a Python MCP server project using FastMCP
+- Always verify API methods, types, and configurations against the official FastMCP and Model Context Protocol (MCP) documentation
 - Use standard logging practices without decorative elements
 - Write code that is self-documenting and easy to maintain

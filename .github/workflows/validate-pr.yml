@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
 
       - name: Install Ruff
         run: pip install ruff
@@ -48,7 +48,7 @@ jobs:
       
       - name: Run tests with coverage
         run: |
-          docker compose run --rm -e COVERAGE_FILE=/tmp/.coverage test sh -c "pytest tests/ --cov=callcoward --cov-report=xml:/tmp/coverage.xml --cov-report=term-missing && cat /tmp/coverage.xml" > coverage.xml
+          docker compose run --rm -e COVERAGE_FILE=/tmp/.coverage test sh -c "pytest tests/ --cov=service --cov-report=xml:/tmp/coverage.xml --cov-report=term-missing && cat /tmp/coverage.xml" > coverage.xml
       
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
