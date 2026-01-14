@@ -2,7 +2,7 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-RUN pip install uv
+RUN pip install uv==0.9.25
 
 COPY pyproject.toml ./
 
