@@ -1,5 +1,5 @@
 # Simple MCP server deployed on AWS Fargate
-Very basic mvp project to showcase MCP server deployed on AWS Fargate.
+Very basic proof of concept project to showcase MCP server deployed on AWS Fargate.
 
 # Local environment
 The simplest way to run the MCP server locally is to use docker:
