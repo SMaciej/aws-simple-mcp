@@ -1,0 +1,10 @@
+Rok,Cena_Zubr_0.5l_PLN,Źródło/Uwaga
+2003,2.50,orientacyjna cena średnia piwa w PL (początek ekspansji rynku piwa komercyjnego) :contentReference[oaicite:2]{index=2}
+2005,3.00,orientacyjna średnia detaliczna lagera (szacunek rynku) :contentReference[oaicite:3]{index=3}
+2010,3.20,orientacyjna średnia detaliczna lagera (szacunek rynku) :contentReference[oaicite:4]{index=4}
+2015,3.50,orientacyjna średnia detaliczna lagera (szacunek rynku) :contentReference[oaicite:5]{index=5}
+2019,4.00,orientacyjna średnia detaliczna lagera (szacunek rynku) :contentReference[oaicite:6]{index=6}
+2023,5.20,średnia detaliczna piwa w PL, wzrost cen ze względu na inflację :contentReference[oaicite:7]{index=7}
+2024,5.50,orientacyjna średnia detaliczna piwa (inflacja i akcyza) :contentReference[oaicite:8]{index=8}
+2025,6.00–7.38,cena Żubr 0,5 l w sklepie Duży Ben (brutto / promocje) :contentReference[oaicite:9]{index=9}
+2025,~14.76,cena 4-pack puszek 0,5 l (w ofercie detalicznej) :contentReference[oaicite:10]{index=10}

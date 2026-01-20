@@ -11,6 +11,18 @@ services:
       - ./service:/app/service
     restart: unless-stopped
 
+  inspector:
+    image: ghcr.io/modelcontextprotocol/inspector:latest
+    container_name: mcp-inspector
+    ports:
+      - "6274:6274"
+      - "6277:6277"
+    environment:
+      - HOST=0.0.0.0
+      - MCP_AUTO_OPEN_ENABLED=false
+    depends_on:
+      - mcp-server
+
   test:
     build: .
     container_name: mcp-server-test
