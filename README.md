@@ -18,12 +18,7 @@ make inspector
 ```
 
 This will automatically open your browser with the Inspector UI.
-
-Then connect to your server:
-- Select **"SSE"** transport
-- Enter URL: `http://mcp-server:8000/sse`
-- Set Connection Type as `Via Proxy`
-- Click Connect
+Click `Connect` and you're good to go.
 
 ### Option 2: Quick Inspect (CLI)
 
